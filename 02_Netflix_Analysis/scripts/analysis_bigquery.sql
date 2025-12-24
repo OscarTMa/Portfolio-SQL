@@ -1,7 +1,7 @@
 /*
 PROJECT: Netflix Catalog Analysis
 INFRASTRUCTURE: Google Cloud Platform (GCP) - BigQuery
-AUTHOR: [Tu Nombre]
+AUTHOR: Oscar Tibaduiza
 */
 
 -- 1. OVERVIEW: Data Preview
