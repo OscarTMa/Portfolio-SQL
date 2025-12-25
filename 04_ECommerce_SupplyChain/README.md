@@ -4,7 +4,7 @@
 Analysis of the Brazilian E-Commerce public dataset to evaluate logistics performance and sales distribution. This project focuses on **relational modeling**, joining multiple tables to extract insights about delivery times vs. estimated deadlines.
 
 ## 📊 Interactive Dashboard
-[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Dashboard-E97627?style=for-the-badge&logo=tableau&logoColor=white)](TU_LINK_AQUI)
+[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Dashboard-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/views/Ecommerce_17666808507180/Mastertable?:language=fr-FR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## 🏗 Data Architecture & Modeling
 Unlike previous flat-file projects, this analysis uses a **Star Schema** approach involving relational joins.
