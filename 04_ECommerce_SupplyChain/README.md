@@ -10,7 +10,6 @@ Analysis of the Brazilian E-Commerce public dataset to evaluate logistics perfor
 Unlike previous flat-file projects, this analysis uses a **Star Schema** approach involving relational joins.
 
 ![ER Diagram](./docs/schema_diagram.png) 
-*(Asegúrate de guardar tu imagen de draw.io en una carpeta docs)*
 
 ## 🛠 Tech Stack
 * **Modeling:** Draw.io (Entity Relationship Diagram).
