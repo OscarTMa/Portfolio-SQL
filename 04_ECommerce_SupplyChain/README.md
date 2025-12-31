@@ -30,7 +30,6 @@ Instead of standard bar charts, I designed a **Quadrant Analysis** to segment pr
 * **Horizontal Axis (X):** Average Delivery Time (Logistical Efficiency).
 
 ![Scatter Plot Preview](./img/quadrant_graph.png)
-*(Note: Upload your screenshot to an 'img' folder and reference it here)*
 
 **How to read this graph:**
 * **🟢 Top-Left (Stars):** High Revenue + Fast Delivery. These are the core growth drivers.
