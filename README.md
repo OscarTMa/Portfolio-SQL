@@ -30,4 +30,4 @@ My approach to visualization goes beyond simple charts. I focus on **strategic d
 * **Interactive Filters** for user-driven exploration.
 
 ---
-*Connect with me on [LinkedIn](TU_LINK_LINKEDIN)*
+*Connect with me on [linkedin.com/in/oscartibaduiza](https://www.linkedin.com/in/oscartibaduiza/)*
