@@ -1,4 +1,4 @@
-# 🚀 Data Analyst Portfolio | [Tu Nombre]
+# 🚀 Data Analyst Portfolio | [OScar Tibaduiza]
 
 Hi there! I am a Data Analyst focused on **Cloud Analytics (GCP)** and **Visual Storytelling (Tableau)**. 
 This repository documents my journey solving real-world business problems using a Modern Data Stack.
