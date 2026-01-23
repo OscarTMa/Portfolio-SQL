@@ -1,0 +1,26 @@
+# 📢 Marketing vs Sales Reconciliation (Funnel Audit)
+
+## 📌 Project Overview
+A common friction point in business is the discrepancy between Marketing data (Google Analytics/Ads) and Sales data (CRM). This project performs a **Data Integrity Audit** to reconcile two disjointed datasets, identifying leads that were lost during system integration or manually entered without attribution.
+
+## 📊 Pipeline Health Dashboard
+View the reconciliation report on Tableau Public:
+
+[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Funnel_Audit-E97627?style=for-the-badge&logo=tableau&logoColor=white)]https://public.tableau.com/views/LeadsReconciliation/Tableaudebord1?:language=fr-FR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+## 🧠 Technical Concept: The FULL OUTER JOIN
+To find missing records on *both sides* simultaneously, standard joins fail:
+* `LEFT JOIN` misses leads that exist only in Sales (Manual entries).
+* `RIGHT JOIN` misses leads that exist only in Marketing (Integration errors).
+* **`FULL OUTER JOIN`** preserves all records, allowing us to use `COALESCE` to handle NULLs and flag discrepancies.
+
+```sql
+SELECT 
+    COALESCE(w.Lead_ID, c.Lead_ID) AS ID,
+    CASE 
+        WHEN w.ID IS NULL THEN 'Missing in Web'
+        WHEN c.ID IS NULL THEN 'Missing in CRM'
+        ELSE 'Match'
+    END AS Status
+FROM web_data w
+FULL OUTER JOIN crm_data c ON w.ID = c.ID;
