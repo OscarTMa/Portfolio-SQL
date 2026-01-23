@@ -20,6 +20,7 @@ To find gaps, we first need to define the "perfect state" where every warehouse 
 SELECT w.Warehouse, p.Product
 FROM Warehouses w
 CROSS JOIN Products p;
+```
 
 ## 🔎 Key Findings
 Critical Alert: The South Warehouse is completely out of stock for Laptops (Row didn't exist in source system).
