@@ -6,7 +6,7 @@ A common friction point in business is the discrepancy between Marketing data (G
 ## 📊 Pipeline Health Dashboard
 View the reconciliation report on Tableau Public:
 
-[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Funnel_Audit-E97627?style=for-the-badge&logo=tableau&logoColor=white)]https://public.tableau.com/views/LeadsReconciliation/Tableaudebord1?:language=fr-FR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Funnel_Audit-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/views/LeadsReconciliation/Tableaudebord1?:language=fr-FR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## 🧠 Technical Concept: The FULL OUTER JOIN
 To find missing records on *both sides* simultaneously, standard joins fail:
@@ -24,3 +24,9 @@ SELECT
     END AS Status
 FROM web_data w
 FULL OUTER JOIN crm_data c ON w.ID = c.ID;
+```
+
+## 🔎 Key Findings
+Integration Failure: Lead #103 (Charlie) was captured by Marketing but never reached the CRM. This represents potential lost revenue.
+
+Attribution Gap: Lead #105 (Eve) was converted by Sales but lacks a marketing source, indicating an untracked channel (likely phone or referral).
