@@ -1,0 +1,24 @@
+# 👥 HR Hierarchy Analysis (Self-Join)
+
+## 📌 Project Overview
+Analyzing organizational structure typically requires hierarchical data. This project uses a **Self-Join** technique to map employees to their managers within the same dataset, visualizing the reporting lines and team distribution across different office locations (Northwind Traders Dataset).
+
+## 📊 Interactive Dashboard
+Explore the organizational tree:
+
+[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Org_Chart-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/views/HRAnalyticsManagementSpanofContro/Tableaudebord1?:language=fr-FR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+## 🧠 Technical Concept: The SELF JOIN
+Most HR databases store employees in a single table. To analyze "Who reports to whom", we must join the table to itself.
+
+* **Left Side (Table A):** Represents the *Subordinate*.
+* **Right Side (Table B):** Represents the *Manager*.
+* **Join Key:** `A.ReportsTo = B.EmployeeID`.
+
+```sql
+SELECT 
+    A.employeeName AS Employee,
+    B.employeeName AS Manager
+FROM employees A
+LEFT JOIN employees B 
+  ON A.reportsTo = B.employeeID;
