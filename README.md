@@ -29,9 +29,5 @@ My approach to visualization goes beyond simple charts. I focus on **strategic d
 * **Strategic Quadrants** for performance segmentation.
 * **Interactive Filters** for user-driven exploration.
 ---
-
-    C ==>|Flecha: Exportar Resultados Procesados| D
-    F ==>|Flecha: Conectar Fuente de Datos| G
-    I ==>|Flecha: Documentar y Publicar| J
----
+ 
 *Connect with me on [linkedin.com/in/oscartibaduiza](https://www.linkedin.com/in/oscartibaduiza/)*
