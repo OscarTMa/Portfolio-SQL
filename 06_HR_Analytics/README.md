@@ -23,8 +23,9 @@ FROM employees A
 LEFT JOIN employees B 
   ON A.reportsTo = B.employeeID;
 ```
-## Grphique
+## Architecture
 
+```mermaid
 graph LR
     %% Estilos
     classDef table fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
@@ -40,3 +41,4 @@ graph LR
     direction TB
     N1[Table A looks at Table A<br>to find the Manager Name]
     end
+```
