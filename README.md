@@ -64,51 +64,27 @@ graph LR
 ## Architecture 2
 ```mermaid 
 graph LR
-    %% Definición de estilos
-    classDef gcp fill:#e8f0fe,stroke:#4285f4,stroke-width:3px,color:#000000,rx:10,ry:10;
-    classDef drive fill:#e6f4ea,stroke:#0f9d58,stroke-width:3px,color:#000000,rx:10,ry:10;
-    classDef tableau fill:#fff0e0,stroke:#e97627,stroke-width:3px,color:#000000,rx:10,ry:10;
-    classDef github fill:#f6f8fa,stroke:#24292e,stroke-width:3px,color:#000000,rx:10,ry:10;
+    %% ESTILOS (Colores de marca)
+    classDef gcp fill:#e8f0fe,stroke:#4285f4,stroke-width:2px,color:#000;
+    classDef drive fill:#e6f4ea,stroke:#0f9d58,stroke-width:2px,color:#000;
+    classDef tableau fill:#fff0e0,stroke:#e97627,stroke-width:2px,color:#000;
+    classDef github fill:#f6f8fa,stroke:#24292e,stroke-width:2px,color:#000;
+
+    %% NODOS PRINCIPALES
+    %% Usamos <br> para los saltos de línea dentro de la misma caja
     
-    %% BLOQUE 1: GCP
-    subgraph B1 [" "]
-        direction TB
-        %% EL FIX: Comillas dobles alrededor de todo el texto HTML
-        Header1["<b>1. Data Processing & Logic</b><br>(Google Cloud Platform)"]:::gcpHeader
-        List1["• Ingesta de datos crudos.<br>• Consultas SQL complejas<br>(CTEs, Window Functions).<br>• Limpieza y Transformación."]:::leftAlign
-    end
-    class B1 gcp;
+    N1("<b>1. GCP BigQuery</b><br><br>• Ingesta de datos crudos<br>• Lógica SQL (CTEs, Joins)<br>• Limpieza y Transformación"):::gcp
+    
+    N2("<b>2. Google Drive</b><br><br>• Staging Area (Intermedio)<br>• Archivos CSV procesados<br>• Puente Nube → BI"):::drive
+    
+    N3("<b>3. Tableau Public</b><br><br>• Dashboards Interactivos<br>• Diseño de KPIs y Métricas<br>• Storytelling Visual"):::tableau
+    
+    N4("<b>4. GitHub Portfolio</b><br><br>• Control de Versiones<br>• Documentación Técnica<br>• Presentación del Proyecto"):::github
 
-    %% FLECHA 1
-    B1 == "Export Processed Data (CSV)" ==> B2
-
-    %% BLOQUE 2: Drive
-    subgraph B2 [" "]
-        direction TB
-        Header2["<b>2. Staging Area</b><br>(Google Drive)"]:::driveHeader
-        List2["• Almacenamiento seguro.<br>• Puente de conexión entre<br>la nube y el BI.<br>• Organización de Datasets."]:::leftAlign
-    end
-    class B2 drive;
-
-    %% FLECHA 2
-    B2 == "Live Connection" ==> B3
-
-    %% BLOQUE 3: Tableau
-    subgraph B3 [" "]
-        direction TB
-        Header3["<b>3. Visualization</b><br>(Tableau Public)"]:::tableauHeader
-        List3["• Dashboards interactivos.<br>• Diseño de KPIs.<br>• Filtros y Parámetros.<br>• Storytelling visual."]:::leftAlign
-    end
-    class B3 tableau;
-
-    %% FLECHA 3
-    B3 == "Documentation" ==> B4
-
-    %% BLOQUE 4: GitHub
-    subgraph B4 [" "]
-        direction TB
-        Header4["<b>4. Portfolio & Versioning</b><br>(GitHub)"]:::githubHeader
-        List4["• Repositorio de código SQL.<br>• Documentación técnica.<br>• Presentación profesional<br>del proyecto."]:::leftAlign
+    %% CONEXIONES
+    N1 -->|Export CSV| N2
+    N2 -->|Live Connection| N3
+    N3 -->|Publish & Link| N4
 ```
 
 ---
