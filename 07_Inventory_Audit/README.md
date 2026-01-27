@@ -26,3 +26,36 @@ CROSS JOIN Products p;
 Critical Alert: The South Warehouse is completely out of stock for Laptops (Row didn't exist in source system).
 
 Replenishment Needed: Desk Chairs are below the safety stock threshold (20 units) in the South region.
+
+
+graph TD
+    %% Estilos
+    classDef warehouse fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;
+    classDef product fill:#e1bee7,stroke:#8e24aa,stroke-width:2px;
+    classDef result fill:#ffccbc,stroke:#d84315,stroke-width:2px;
+
+    subgraph W ["Table A: Warehouses"]
+        W1[North WH]:::warehouse
+        W2[South WH]:::warehouse
+    end
+
+    subgraph P ["Table B: Products"]
+        P1[Laptop]:::product
+        P2[Mug]:::product
+    end
+
+    subgraph R ["Result: CROSS JOIN (Cartesian Product)"]
+        R1[North - Laptop]:::result
+        R2[North - Mug]:::result
+        R3[South - Laptop]:::result
+        R4[South - Mug]:::result
+    end
+
+    %% Conexiones
+    W1 --> R1 & R2
+    W2 --> R3 & R4
+    P1 --> R1 & R3
+    P2 --> R2 & R4
+
+
+
