@@ -8,7 +8,7 @@ It serves as the entry point into data analysis, focusing on fundamental questio
 ## 📊 Dashboard & Visuals
 (Optional: If you have a Tableau link for this project, put it here. Otherwise, you can remove this section or add a screenshot of an Excel pivot table).
 
-[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Dashboard-E97627?style=for-the-badge&logo=tableau&logoColor=white)](TU_LINK_AQUI)
+[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Dashboard-E97627?style=for-the-badge&logo=tableau&logoColor=white)]()
 
 ## 🎯 Business Questions Addressed
 The analysis aimed to answer high-level business questions for stakeholders:
