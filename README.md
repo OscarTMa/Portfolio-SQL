@@ -28,6 +28,34 @@ My approach to visualization goes beyond simple charts. I focus on **strategic d
 * **Cohort Heatmaps** for retention tracking.
 * **Strategic Quadrants** for performance segmentation.
 * **Interactive Filters** for user-driven exploration.
+---
+graph LR
+    subgraph GCP ["Paso 1: Procesamiento & Lógica (GCP BigQuery)"]
+        style GCP fill:#e8f0fe,stroke:#4285f4,stroke-width:2px,color:#000000
+        A[Icono: Base de Datos/Nube] --> B(Transformación de Datos con SQL);
+        B --> C(Limpieza, Joins, Ventanas, Uniones);
+    end
 
+    subgraph Drive ["Paso 2: Almacenamiento Intermedio (Google Drive)"]
+        style Drive fill:#e6f4ea,stroke:#0f9d58,stroke-width:2px,color:#000000
+        D[Icono: Logo Drive Triangle] --> E(Exportación de Resultados);
+        E --> F(Archivos CSV 'Staging');
+    end
+
+    subgraph Tableau ["Paso 3: Visualización & Storytelling (Tableau)"]
+        style Tableau fill:#fff0e0,stroke:#e97627,stroke-width:2px,color:#000000
+        G[Icono: Logo Tableau Spark] --> H(Conexión a Datos y Modelado);
+        H --> I(Creación de Dashboards Interactivos);
+    end
+
+    subgraph Github ["Paso 4: Documentación & Portafolio (GitHub)"]
+        style Github fill:#f6f8fa,stroke:#24292e,stroke-width:2px,color:#000000
+        J[Icono: Logo GitHub Octocat] --> K(Versionado de Scripts SQL);
+        K --> L(README.md Profesional y Enlaces);
+    end
+
+    C ==>|Flecha: Exportar Resultados Procesados| D
+    F ==>|Flecha: Conectar Fuente de Datos| G
+    I ==>|Flecha: Documentar y Publicar| J
 ---
 *Connect with me on [linkedin.com/in/oscartibaduiza](https://www.linkedin.com/in/oscartibaduiza/)*
