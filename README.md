@@ -39,49 +39,24 @@ My approach goes beyond simple charts. I focus on **structuring complex data** t
 ## Architecture
 ```mermaid
 graph LR
-    %% Estilos Personalizados para Resaltar
-    classDef gcp fill:#e8f0fe,stroke:#4285f4,stroke-width:3px,color:#0d47a1;
-    classDef drive fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#1b5e20;
-    classDef tableau fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#e65100;
-    classDef sql fill:#fff,stroke:#4285f4,stroke-width:1px,stroke-dasharray: 5 5,color:#4285f4;
-
-    %% Nodos Principales
-    subgraph Cloud ["🔵 Google Cloud Platform (GCP)"]
-        direction TB
-        BQ("<b>BigQuery Data Warehouse</b>"):::gcp
-        Logic("<b>SQL Scripting</b><br>(Joins, CTEs, Windows)"):::sql
-    end
-
-    Storage("<b>Google Drive</b><br>(Staging Area / Sheets)"):::drive
-    Viz("<b>Tableau Public</b><br>(Dashboarding & Storytelling)"):::tableau
-
-    %% Conexiones
-    Logic --> BQ
-    BQ -->|Export Processed Data| Storage
-    Storage -->|Live Connection| Viz
-```
----
-## Architecture 2
-```mermaid 
-graph LR
-    %% ESTILOS (Colores de marca)
+    %% STYLES (Brand Colors)
     classDef gcp fill:#e8f0fe,stroke:#4285f4,stroke-width:2px,color:#000;
     classDef drive fill:#e6f4ea,stroke:#0f9d58,stroke-width:2px,color:#000;
     classDef tableau fill:#fff0e0,stroke:#e97627,stroke-width:2px,color:#000;
     classDef github fill:#f6f8fa,stroke:#24292e,stroke-width:2px,color:#000;
 
-    %% NODOS PRINCIPALES
-    %% Usamos <br> para los saltos de línea dentro de la misma caja
+    %% MAIN NODES
+    %% Using <br> for line breaks inside the quotes
     
-    N1("<b>1. GCP BigQuery</b><br><br>• Ingesta de datos crudos<br>• Lógica SQL (CTEs, Joins)<br>• Limpieza y Transformación"):::gcp
+    N1("<b>1. GCP BigQuery</b><br><br>• Raw Data Ingestion<br>• SQL Logic (CTEs, Joins)<br>• Cleaning & Transformation"):::gcp
     
-    N2("<b>2. Google Drive</b><br><br>• Staging Area (Intermedio)<br>• Archivos CSV procesados<br>• Puente Nube → BI"):::drive
+    N2("<b>2. Google Drive</b><br><br>• Staging Area (Intermediate)<br>• Processed CSV Files<br>• Cloud → BI Bridge"):::drive
     
-    N3("<b>3. Tableau Public</b><br><br>• Dashboards Interactivos<br>• Diseño de KPIs y Métricas<br>• Storytelling Visual"):::tableau
+    N3("<b>3. Tableau Public</b><br><br>• Interactive Dashboards<br>• KPI & Metric Design<br>• Visual Storytelling"):::tableau
     
-    N4("<b>4. GitHub Portfolio</b><br><br>• Control de Versiones<br>• Documentación Técnica<br>• Presentación del Proyecto"):::github
+    N4("<b>4. GitHub Portfolio</b><br><br>• Version Control<br>• Technical Documentation<br>• Project Showcase"):::github
 
-    %% CONEXIONES
+    %% CONNECTIONS
     N1 -->|Export CSV| N2
     N2 -->|Live Connection| N3
     N3 -->|Publish & Link| N4
