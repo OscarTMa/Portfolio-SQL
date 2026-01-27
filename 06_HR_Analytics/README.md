@@ -22,3 +22,20 @@ SELECT
 FROM employees A
 LEFT JOIN employees B 
   ON A.reportsTo = B.employeeID;
+```
+
+graph LR
+    %% Estilos
+    classDef table fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    
+    %% Nodos
+    A[("Employees Table<br>(Subordinates)")]:::table
+    
+    %% Relación Recursiva
+    A -->|Link: ReportsTo = EmployeeID| A
+    
+    %% Nota Explicativa
+    subgraph Logic ["Logic: SELF JOIN"]
+    direction TB
+    N1[Table A looks at Table A<br>to find the Manager Name]
+    end
