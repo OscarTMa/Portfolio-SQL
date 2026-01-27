@@ -27,7 +27,8 @@ Critical Alert: The South Warehouse is completely out of stock for Laptops (Row 
 
 Replenishment Needed: Desk Chairs are below the safety stock threshold (20 units) in the South region.
 
-
+## Architecture
+```mermaid
 graph TD
     %% Estilos
     classDef warehouse fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;
@@ -56,6 +57,6 @@ graph TD
     W2 --> R3 & R4
     P1 --> R1 & R3
     P2 --> R2 & R4
-
+```
 
 
