@@ -40,15 +40,15 @@ graph LR
     classDef error fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,stroke-dasharray: 5 5;
     classDef match fill:#e0e0e0,stroke:#616161,stroke-width:2px;
 
-    %% Nodos
-    Web(Web Analytics):::mkt
-    Sales(CRM Sales):::crm
+    %% Nodos (Texto entre comillas para evitar errores)
+    Web("Web Analytics"):::mkt
+    Sales("CRM Sales"):::crm
     
     %% Resultado del Join
     subgraph Result ["FULL OUTER JOIN RESULT"]
-        Left[Only in Web<br>(Lost Lead)]:::error
-        Center[In Both<br>(Match)]:::match
-        Right[Only in CRM<br>(Manual Entry)]:::error
+        Left["Only in Web<br>(Lost Lead)"]:::error
+        Center["In Both<br>(Match)"]:::match
+        Right["Only in CRM<br>(Manual Entry)"]:::error
     end
 
     %% Conexiones
