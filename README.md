@@ -34,6 +34,32 @@ My approach goes beyond simple charts. I focus on **structuring complex data** t
 * **Advanced SQL Modeling:** Utilizing CTEs, Window Functions, and complex relational techniques (Self, Cross, Full Outer, and Multiple Joins) to reshape normalized data for analysis.
 * **Strategic Visuals:** Creating Cohort Heatmaps for retention, Quadrant Analyses for segmentation, and Hierarchical Tree Maps for organizational structure.
 * **Data Integrity Audits:** Using SQL to visualize "invisible" data gaps and reconcile disconnected systems across departments.
+---
+
+## Architecture
+```mermaid
+graph LR
+    %% Estilos Personalizados para Resaltar
+    classDef gcp fill:#e8f0fe,stroke:#4285f4,stroke-width:3px,color:#0d47a1;
+    classDef drive fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#1b5e20;
+    classDef tableau fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#e65100;
+    classDef sql fill:#fff,stroke:#4285f4,stroke-width:1px,stroke-dasharray: 5 5,color:#4285f4;
+
+    %% Nodos Principales
+    subgraph Cloud ["🔵 Google Cloud Platform (GCP)"]
+        direction TB
+        BQ("<b>BigQuery Data Warehouse</b>"):::gcp
+        Logic("<b>SQL Scripting</b><br>(Joins, CTEs, Windows)"):::sql
+    end
+
+    Storage("<b>Google Drive</b><br>(Staging Area / Sheets)"):::drive
+    Viz("<b>Tableau Public</b><br>(Dashboarding & Storytelling)"):::tableau
+
+    %% Conexiones
+    Logic --> BQ
+    BQ -->|Export Processed Data| Storage
+    Storage -->|Live Connection| Viz
+```
 
 ---
 
