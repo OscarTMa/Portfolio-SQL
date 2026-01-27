@@ -42,14 +42,14 @@ graph TD
     classDef fact fill:#212121,stroke:#000000,stroke-width:2px,color:#fff;
     classDef dim fill:#f5f5f5,stroke:#9e9e9e,stroke-width:2px;
 
-    %% Fact Table
-    Match(MATCHES TABLE<br>HomeID | AwayID | LeagueID):::fact
+    %% Fact Table (EL CAMBIO: Comillas dobles alrededor del texto que tiene la barra |)
+    Match("MATCHES TABLE<br>HomeID | AwayID | LeagueID"):::fact
 
-    %% Dimension Tables
-    League(Leagues Table):::dim
-    Country(Countries Table):::dim
-    TeamH(Teams Table<br>Alias: HomeT):::dim
-    TeamA(Teams Table<br>Alias: AwayT):::dim
+    %% Dimension Tables (Ponemos comillas por seguridad)
+    League("Leagues Table"):::dim
+    Country("Countries Table"):::dim
+    TeamH("Teams Table<br>Alias: HomeT"):::dim
+    TeamA("Teams Table<br>Alias: AwayT"):::dim
 
     %% Conexiones
     Match -->|Join 1| League
