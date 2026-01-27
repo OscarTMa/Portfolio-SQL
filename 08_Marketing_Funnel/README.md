@@ -30,3 +30,30 @@ FULL OUTER JOIN crm_data c ON w.ID = c.ID;
 Integration Failure: Lead #103 (Charlie) was captured by Marketing but never reached the CRM. This represents potential lost revenue.
 
 Attribution Gap: Lead #105 (Eve) was converted by Sales but lacks a marketing source, indicating an untracked channel (likely phone or referral).
+
+## Architecture
+```mermaid
+graph LR
+    %% Estilos
+    classDef mkt fill:#bbdefb,stroke:#1976d2,stroke-width:2px;
+    classDef crm fill:#c8e6c9,stroke:#388e3c,stroke-width:2px;
+    classDef error fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef match fill:#e0e0e0,stroke:#616161,stroke-width:2px;
+
+    %% Nodos
+    Web(Web Analytics):::mkt
+    Sales(CRM Sales):::crm
+    
+    %% Resultado del Join
+    subgraph Result ["FULL OUTER JOIN RESULT"]
+        Left[Only in Web<br>(Lost Lead)]:::error
+        Center[In Both<br>(Match)]:::match
+        Right[Only in CRM<br>(Manual Entry)]:::error
+    end
+
+    %% Conexiones
+    Web --> Left
+    Web --> Center
+    Sales --> Center
+    Sales --> Right
+```
