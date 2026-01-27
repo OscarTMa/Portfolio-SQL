@@ -35,6 +35,7 @@ Highest Scoring League: The data snippet shows [Nombre de la Liga] has the highe
 Key Matchup: Verified the historical 5-0 victory of FC Barcelona over Real Madrid using the relational query.
 
 ## Architecture
+
 ```mermaid
 graph TD
     %% Estilos
