@@ -1,21 +1,44 @@
-# 🛒 Análisis de Ventas - Global Superstore
+# 🌍 Global Superstore Sales Analysis
 
-## 📌 Descripción del Proyecto
-Este proyecto utiliza SQL para analizar un dataset de ventas minoristas globales. El objetivo es identificar las categorías más rentables, los productos más vendidos y detectar regiones con pérdidas financieras.
+## 📌 Project Overview
+This foundational project involves an **Exploratory Data Analysis (EDA)** of a global retail dataset. The primary goal was to establish a baseline understanding of sales performance, profitability, and shipping efficiency across different international markets and product categories.
 
-## 🗂 Estructura del Proyecto
-* **Dataset:** Kaggle Global Superstore
-* **Base de Datos:** SQL Server / PostgreSQL
-* **Conceptos Clave:** Agregaciones, Filtrado de Grupos (`HAVING`), Lógica Condicional (`CASE`).
+It serves as the entry point into data analysis, focusing on fundamental questioning and data exploration techniques.
 
-## 🔎 Consultas Clave (Insights)
-* **Categorías:** La categoría "Technology" presenta el mayor margen de beneficio a pesar de no tener el mayor volumen de unidades.
-* **Regiones:** Se detectaron pérdidas operativas en ciertas regiones que requieren revisión de estrategia de precios.
+## 📊 Dashboard & Visuals
+(Optional: If you have a Tableau link for this project, put it here. Otherwise, you can remove this section or add a screenshot of an Excel pivot table).
 
-## 🧠 Teoría Aplicada (Generado con NotebookLM)
-### Diferencia entre WHERE y HAVING
-En este análisis, utilizamos `HAVING` para filtrar clientes *después* de haber sumado sus compras totales.
-* **WHERE:** Filtra filas individuales antes de agruparlas (ej. filtrar por año 2023).
-* **HAVING:** Filtra los resultados agregados (ej. filtrar clientes cuya SUMA de ventas sea > 5000).
+[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Dashboard-E97627?style=for-the-badge&logo=tableau&logoColor=white)](TU_LINK_AQUI)
 
-*(Ver `docs/theory_explanation.md` para la explicación completa)*.
+## 🎯 Business Questions Addressed
+The analysis aimed to answer high-level business questions for stakeholders:
+* What are our top-selling products and categories?
+* Which global regions are generating the most profit versus the most revenue?
+* Are shipping modes impacting delivery times?
+
+## 🛠️ Tech Stack & Key Skills
+* **Technology:** SQL (Google BigQuery), Excel (Source Data review).
+* **Key Skills:**
+    * **Data Aggregation:** Using `SUM()`, `AVG()`, and `COUNT()` to summarize massive datasets.
+    * **Filtering & Segmentation:** Using `WHERE` clauses to isolate specific markets (e.g., "EU Market" vs. "US Market").
+    * **Sorting & Ranking:** Using `ORDER BY` to identify top performers (best-sellers) and laggards.
+
+## 🔎 Example Analysis (SQL)
+A core part of the analysis was identifying the top 10 products by total sales revenue to understand inventory priorities.
+
+```sql
+-- Identifying Top 10 Performing Products by Revenue
+SELECT 
+    Product_Name,
+    Category,
+    ROUND(SUM(Sales), 2) AS Total_Revenue,
+    SUM(Quantity) AS Total_Units_Sold
+FROM `retail_data.global_superstore`
+GROUP BY Product_Name, Category
+ORDER BY Total_Revenue DESC
+LIMIT 10;
+
+```
+## 🚀 Conclusion
+This project established the necessary groundwork for data manipulation. By answering fundamental business questions, it paved the way for more complex analyses (like the cohort or funnel analysis in later projects) in the portfolio journey.
+
