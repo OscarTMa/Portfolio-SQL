@@ -33,3 +33,26 @@ JOIN teams AwayT ON m.away_team_id = AwayT.id -- Alias 2
 Highest Scoring League: The data snippet shows [Nombre de la Liga] has the highest average goals per match.
 
 Key Matchup: Verified the historical 5-0 victory of FC Barcelona over Real Madrid using the relational query.
+
+## Architecture
+```mermaid
+graph TD
+    %% Estilos
+    classDef fact fill:#212121,stroke:#000000,stroke-width:2px,color:#fff;
+    classDef dim fill:#f5f5f5,stroke:#9e9e9e,stroke-width:2px;
+
+    %% Fact Table
+    Match(MATCHES TABLE<br>HomeID | AwayID | LeagueID):::fact
+
+    %% Dimension Tables
+    League(Leagues Table):::dim
+    Country(Countries Table):::dim
+    TeamH(Teams Table<br>Alias: HomeT):::dim
+    TeamA(Teams Table<br>Alias: AwayT):::dim
+
+    %% Conexiones
+    Match -->|Join 1| League
+    League -->|Join 2| Country
+    Match -->|Join 3| TeamH
+    Match -->|Join 4| TeamA
+```
