@@ -23,6 +23,7 @@ FROM employees A
 LEFT JOIN employees B 
   ON A.reportsTo = B.employeeID;
 ```
+## Grphique
 
 graph LR
     %% Estilos
