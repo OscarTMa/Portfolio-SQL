@@ -5,11 +5,6 @@ This foundational project involves an **Exploratory Data Analysis (EDA)** of a g
 
 It serves as the entry point into data analysis, focusing on fundamental questioning and data exploration techniques.
 
-## 📊 Dashboard & Visuals
-(Optional: If you have a Tableau link for this project, put it here. Otherwise, you can remove this section or add a screenshot of an Excel pivot table).
-
-[![View on Tableau Public](https://img.shields.io/badge/Tableau-View_Dashboard-E97627?style=for-the-badge&logo=tableau&logoColor=white)]()
-
 ## 🎯 Business Questions Addressed
 The analysis aimed to answer high-level business questions for stakeholders:
 * What are our top-selling products and categories?
