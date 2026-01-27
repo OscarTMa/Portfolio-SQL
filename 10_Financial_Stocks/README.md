@@ -20,9 +20,36 @@ SELECT Date, Ticker, Price, '2020' AS Source FROM stocks_2020
 UNION ALL
 SELECT Date, Ticker, Price, '2021' AS Source FROM stocks_2021
 ORDER BY Date;
-
 ```
+
+
+
 ## 🔎 Key Insights
 Growth Trend: Both AAPL and GOOGL showed consistent upward trends across the unified 2-year period.
 
 Data Integrity: The Source_File column confirms that the transition from the 2020 dataset to the 2021 dataset is seamless, with no gaps in the timeline.
+
+## Architecture
+```mermaid
+graph TD
+    %% Estilos
+    classDef y20 fill:#bbdefb,stroke:#1976d2,stroke-width:2px;
+    classDef y21 fill:#c5cae9,stroke:#303f9f,stroke-width:2px;
+    classDef master fill:#b2dfdb,stroke:#00695c,stroke-width:4px;
+
+    %% Tablas Origen
+    T1[File: Stocks_2020.csv]:::y20
+    T2[File: Stocks_2021.csv]:::y21
+
+    %% Operacion
+    Union((UNION ALL<br>Append Rows))
+
+    %% Resultado
+    Master[MASTER TABLE<br>2020 Data<br>2021 Data]:::master
+
+    %% Flujo
+    T1 --> Union
+    T2 --> Union
+    Union --> Master
+```
+
