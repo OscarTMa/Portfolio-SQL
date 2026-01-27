@@ -3,6 +3,35 @@
 Hi there! I am a Data Analyst focused on **Cloud Analytics (GCP)** and **Visual Storytelling (Tableau)**. 
 This repository documents my journey solving real-world business problems using a Modern Data Stack.
 
+---
+## Architecture
+```mermaid
+graph LR
+    %% STYLES (Brand Colors)
+    classDef gcp fill:#e8f0fe,stroke:#4285f4,stroke-width:2px,color:#000;
+    classDef drive fill:#e6f4ea,stroke:#0f9d58,stroke-width:2px,color:#000;
+    classDef tableau fill:#fff0e0,stroke:#e97627,stroke-width:2px,color:#000;
+    classDef github fill:#f6f8fa,stroke:#24292e,stroke-width:2px,color:#000;
+
+    %% MAIN NODES
+    %% Using <br> for line breaks inside the quotes
+    
+    N1("<b>1. GCP BigQuery</b><br><br>• Raw Data Ingestion<br>• SQL Logic (CTEs, Joins)<br>• Cleaning & Transformation"):::gcp
+    
+    N2("<b>2. Google Drive</b><br><br>• Staging Area (Intermediate)<br>• Processed CSV Files<br>• Cloud → BI Bridge"):::drive
+    
+    N3("<b>3. Tableau Public</b><br><br>• Interactive Dashboards<br>• KPI & Metric Design<br>• Visual Storytelling"):::tableau
+    
+    N4("<b>4. GitHub Portfolio</b><br><br>• Version Control<br>• Technical Documentation<br>• Project Showcase"):::github
+
+    %% CONNECTIONS
+    N1 -->|Export CSV| N2
+    N2 -->|Live Connection| N3
+    N3 -->|Publish & Link| N4
+```
+
+---
+
 ## 🛠️ Tech Stack & Tools
 * **Cloud & Warehousing:** Google Cloud Platform (GCP), BigQuery.
 * **Data Processing:** SQL (Standard & Legacy), Excel.
@@ -35,33 +64,4 @@ My approach goes beyond simple charts. I focus on **structuring complex data** t
 * **Strategic Visuals:** Creating Cohort Heatmaps for retention, Quadrant Analyses for segmentation, and Hierarchical Tree Maps for organizational structure.
 * **Data Integrity Audits:** Using SQL to visualize "invisible" data gaps and reconcile disconnected systems across departments.
 ---
-
-## Architecture
-```mermaid
-graph LR
-    %% STYLES (Brand Colors)
-    classDef gcp fill:#e8f0fe,stroke:#4285f4,stroke-width:2px,color:#000;
-    classDef drive fill:#e6f4ea,stroke:#0f9d58,stroke-width:2px,color:#000;
-    classDef tableau fill:#fff0e0,stroke:#e97627,stroke-width:2px,color:#000;
-    classDef github fill:#f6f8fa,stroke:#24292e,stroke-width:2px,color:#000;
-
-    %% MAIN NODES
-    %% Using <br> for line breaks inside the quotes
-    
-    N1("<b>1. GCP BigQuery</b><br><br>• Raw Data Ingestion<br>• SQL Logic (CTEs, Joins)<br>• Cleaning & Transformation"):::gcp
-    
-    N2("<b>2. Google Drive</b><br><br>• Staging Area (Intermediate)<br>• Processed CSV Files<br>• Cloud → BI Bridge"):::drive
-    
-    N3("<b>3. Tableau Public</b><br><br>• Interactive Dashboards<br>• KPI & Metric Design<br>• Visual Storytelling"):::tableau
-    
-    N4("<b>4. GitHub Portfolio</b><br><br>• Version Control<br>• Technical Documentation<br>• Project Showcase"):::github
-
-    %% CONNECTIONS
-    N1 -->|Export CSV| N2
-    N2 -->|Live Connection| N3
-    N3 -->|Publish & Link| N4
-```
-
----
-
 *Connect with me on [linkedin.com/in/oscartibaduiza](https://www.linkedin.com/in/oscartibaduiza/)*
